@@ -35,13 +35,9 @@ public class Cliente implements Serializable{
     @Column(name = "dni", unique = true)
     private int dni = 0;
 
-    @OneToOne(cascade = CascadeType.ALL) //cualquier cambio que realice en el cliente se va reflejar en el domicilio
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_domicilio")
     private Domicilio domicilio ;
-
-    @Builder.Default
-    @OneToMany(mappedBy = "cliente")
-    private List<Factura> facturas = new ArrayList<Factura>();
 
 
 

@@ -28,6 +28,4 @@ public class Domicilio implements Serializable {
     @Column(name = "numero")
     private int numero = 0;
 
-    @OneToOne(mappedBy = "domicilio")
-    private Cliente cliente;
 }

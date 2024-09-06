@@ -25,8 +25,6 @@ public class Categoria  implements Serializable {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private long id;
 
-        @Builder.Default
-        @ManyToMany(mappedBy = "categorias")
-        private List<Articulo> articulos = new ArrayList<Articulo>();
+
 
 }

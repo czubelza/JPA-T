@@ -35,10 +35,6 @@ public class Articulo implements Serializable {
     private int precio = 0;
 
     @Builder.Default
-    @OneToMany(mappedBy = "articulo", cascade = CascadeType.PERSIST)
-    private List<DetalleFactura> detalles = new ArrayList<DetalleFactura>();
-
-    @Builder.Default
     @ManyToMany(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     @JoinTable(
             name ="articulo_categoria",

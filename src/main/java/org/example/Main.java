@@ -27,7 +27,7 @@ public class Main {
                     .dni(36789012)
                     .domicilio(domic1)
                     .build();
-            domic1.setCliente(cliente1);
+
             factura1.setCliente(cliente1);
 
             Categoria beb = new Categoria();
@@ -69,9 +69,7 @@ public class Main {
                     .precio(2000)
                     .build(); */
             art1.getCategorias().add(beb);
-            beb.getArticulos().add(art1);
             art2.getCategorias().add(sna);
-            sna.getArticulos().add(art2);
             DetalleFactura detalleF1 = new DetalleFactura();
             DetalleFactura detalleF2 = new DetalleFactura();
             detalleF1.setArticulo(art1);
@@ -80,12 +78,8 @@ public class Main {
             detalleF2.setArticulo(art2);
             detalleF2.setCantidad(9);
             detalleF2.setSubtotal(31500);
-            art1.getDetalles().add(detalleF1);
-            factura1.getDetalles().add(detalleF1);
-            detalleF1.setFactura(factura1);
-            art2.getDetalles().add(detalleF2);
-            factura1.getDetalles().add(detalleF2);
-            detalleF2.setFactura(factura1);
+            factura1.getDetalle().add(detalleF1);
+            factura1.getDetalle().add(detalleF2);
             factura1.setTotal(49500);
 
 

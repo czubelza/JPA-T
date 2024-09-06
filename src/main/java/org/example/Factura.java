@@ -38,12 +38,10 @@ public class Factura implements Serializable {
     @JoinColumn(name = "fk_cliente")
     private Cliente cliente;
 
-//    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-  //  private List<DetalleFactura> detalles = new ArrayList<DetalleFactura>();
-
     @Builder.Default
-    @OneToMany( mappedBy = "factura", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<DetalleFactura> detalles = new ArrayList<DetalleFactura>();
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<DetalleFactura> detalle = new ArrayList<DetalleFactura>();
+
 
 
 }
